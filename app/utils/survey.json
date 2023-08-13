@@ -1,0 +1,134 @@
+{
+  "title": "Blochckain Survey",
+  "questions": [
+    {
+      "text": "How old are you?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "18 or less."
+        },
+        {
+          "text": "19-25."
+        },
+        {
+          "text": "26-35."
+        },
+        {
+          "text": "36-50."
+        },
+        {
+          "text": "More than 50."
+        }
+      ]
+    },
+    {
+      "text": "Do you know what is the difference between a crypto coin and an NFT?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "A crypto coin is a digital or virtual currency that uses cryptography for security. NFT stands for non-fungible token, which means that each token is unique and cannot be replaced by another token."
+        },
+        {
+          "text": "Crypto coins are typically used as a medium of exchange, while NFTs are typically used to represent ownership of digital assets."
+        },
+        {
+          "text": "Crypto coins are fungible, meaning that they can be traded or exchanged for one another with no loss of value. NFTs are non-fungible, meaning that each token is unique and has its own value."
+        },
+        {
+          "text": "Crypto coins are typically used for a variety of purposes, such as buying goods and services, investing, and speculation. NFTs are typically used for representing ownership of digital assets, such as art, music, and videos."
+        },
+        {
+          "text": "I do not know."
+        }
+      ]
+    },
+    {
+      "text": "Which blockchain is the most popular for crypto coins?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "The most popular blockchain for crypto coins is Ethereum. Ethereum is a decentralized open-source blockchain system that features its own cryptocurrency, Ether."
+        },
+        {
+          "text": "Binance Smart Chain is a popular blockchain for crypto coins. Binance Smart Chain is a high-performance blockchain that is designed for decentralized applications."
+        },
+        {
+          "text": "Solana is a popular blockchain for crypto coins. Solana is a high-performance blockchain that is designed to be scalable and efficient."
+        },
+        {
+          "text": "Cardano is a popular blockchain for crypto coins. Cardano is a blockchain that is designed to be more energy-efficient and scalable than Bitcoin and Ethereum."
+        },
+        {
+          "text": "I do not know."
+        }
+      ]
+    },
+    {
+      "text": "How do you store crypto coins?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "In a hardware wallet, which is a physical device that stores your private keys offline."
+        },
+        {
+          "text": "in a software wallet, which is a software program that stores your private keys on your computer or mobile device."
+        },
+        {
+          "text": "On an exchange, but this is not recommended as exchanges are often hacked."
+        },
+        {
+          "text": "In a cold storage wallet, which is a hardware wallet that is not connected to the internet."
+        },
+        {
+          "text": "In a multi-signature wallet, which requires multiple signatures to authorize a transaction."
+        },
+        {
+          "text": "I do not have crypto coins to store."
+        }
+      ]
+    },
+    {
+      "text": "What are the benefits of using crypto coins?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "Crypto coins are decentralized, meaning that they are not subject to government control."
+        },
+        {
+          "text": "Crypto coins are transparent, meaning that all transactions are recorded on a public ledger."
+        },
+        {
+          "text": "Crypto coins are secure, meaning that they are protected by cryptography."
+        },
+        {
+          "text": "Crypto coins are fast, meaning that transactions can be processed quickly."
+        },
+        {
+          "text": "Crypto coins are cheap, meaning that the fees for transactions are low."
+        }
+      ]
+    },
+    {
+      "text": "What are the risks of using crypto coins?",
+      "lifetimeSeconds": 45,
+      "options": [
+        {
+          "text": "Crypto coins are a relatively new technology and there is a risk of fraud or scams."
+        },
+        {
+          "text": "Crypto coins are also volatile, meaning that their value can fluctuate wildly."
+        },
+        {
+          "text": "Crypto coins are not regulated by any government, so there is no recourse if you lose your coins or if they are stolen."
+        },
+        {
+          "text": "Crypto coins can be used for illegal activities, such as money laundering and drug trafficking."
+        },
+        {
+          "text": "The energy consumption of mining crypto coins is a major environmental concern."
+        }
+      ]
+    }
+  ]
+}
