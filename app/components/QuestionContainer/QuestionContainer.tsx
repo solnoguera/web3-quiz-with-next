@@ -1,5 +1,6 @@
 import React from "react";
 import Question from "../Question/Question";
+import Button from "../Button/Button";
 
 const QuestionContainer = () => {
   return (
@@ -8,15 +9,9 @@ const QuestionContainer = () => {
         <div className="p-6 sm:p-16">
           <Question question="What often do you use crypto coins?" />
 
-          <div className="text-center flex justify-evenly py-12">
-            <button className="group relative h-12 w-48 overflow-hidden rounded-2xl bg-blue-900 text-lg font-bold text-white">
-              Back
-              <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
-            </button>
-            <button className="group relative h-12 w-48 overflow-hidden rounded-2xl bg-blue-900 text-lg font-bold text-white">
-              Next
-              <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/30"></div>
-            </button>
+          <div className="text-center flex justify-evenly py-14">
+            <Button title="Back" />
+            <Button title="Next" />
           </div>
 
           <div className="mt-4 space-y-4 text-gray-600 text-center sm:-mb-8">
