@@ -40,9 +40,11 @@ const QuestionContainer = () => {
         </div>
       )}
       {surveyQuery?.isFetching && <Loader />}
-      {surveyQuery?.isError && surveyQuery?.error && (
-        <Error text={surveyQuery?.error?.message ?? "Not found"} />
-      )}
+      {surveyQuery?.isError &&
+        surveyQuery?.error &&
+        !surveyQuery?.isFetching && (
+          <Error text={surveyQuery?.error?.message ?? "Not found"} />
+        )}
     </>
   );
 };

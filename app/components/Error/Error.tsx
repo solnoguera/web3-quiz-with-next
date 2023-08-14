@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button";
 
 type ErrorProps = {
   text: any;
@@ -11,7 +12,8 @@ const Error = ({ text }: ErrorProps) => {
       <div>
         <p className="text-3xl mb-4">Sorry! We had an error.</p>
         <p className="text-xl mb-4">Please, try again soon</p>
-        <p>Error info: {text}</p>
+        <p className="text-sm mb-4">Error info: {text}</p>
+        <Button title="Reload" onClickButton={() => window.location.reload()} />
       </div>
     </div>
   );
