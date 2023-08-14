@@ -10,7 +10,7 @@ const getSurveyData = async () => {
     surveyData
   );
   // If you would like to mock an error, uncomment:
-  //throw Error("No data found");
+  // throw Error("No data found");
   return surveyData;
 };
 

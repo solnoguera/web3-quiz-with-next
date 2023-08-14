@@ -54,9 +54,7 @@ const QuestionContainer = ({
         </div>
       )}
       {isFetching && <Loader />}
-      {isError && error && !isFetching && (
-        <Error text={error?.message ?? "Not found"} />
-      )}
+      {isError && !isFetching && <Error />}
     </>
   );
 };
