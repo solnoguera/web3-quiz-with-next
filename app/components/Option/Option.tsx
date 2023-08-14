@@ -1,9 +1,5 @@
+import { OptionProps } from "@/app/types/Survey.types";
 import React from "react";
-
-type OptionProps = {
-  text: string;
-  onClickOption: (answer: string) => void;
-};
 
 const Option = ({ text, onClickOption }: OptionProps) => {
   return (

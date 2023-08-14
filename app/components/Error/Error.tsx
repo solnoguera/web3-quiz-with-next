@@ -1,9 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-
-type ErrorProps = {
-  text: any;
-};
+import { ErrorProps } from "@/app/types/Survey.types";
 
 const Error = ({ text }: ErrorProps) => {
   console.log("error text", text);

@@ -2,29 +2,43 @@
 import React from "react";
 import Question from "../Question/Question";
 import Button from "../Button/Button";
-import useSurvey from "../../hooks/useSurvey";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
+import usePagination from "@/app/hooks/usePagination";
+import { QuestionContainerProps } from "@/app/types/Survey.types";
 
-const QuestionContainer = () => {
-  const { surveyQuery, page, onNextPage, onBackPage } = useSurvey();
-  console.log(surveyQuery);
+const QuestionContainer = ({
+  data,
+  isFetching,
+  isError,
+  error,
+}: QuestionContainerProps) => {
+  const { page, onNextPage, onBackPage } = usePagination(
+    data?.questions?.length ?? 0
+  );
+  const isLastQuestion = page + 1 === data?.questions.length;
+  console.log(page);
   return (
     <>
-      {!surveyQuery?.isFetching && !surveyQuery.isError && (
+      {!isFetching && !isError && (
         <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
           <div className="rounded-xl bg-white shadow-xl">
             <div className="p-6 sm:p-16">
               <Question
-                text={surveyQuery?.data?.surveyData?.questions[page]?.text}
-                options={
-                  surveyQuery?.data?.surveyData?.questions[page]?.options
-                }
+                text={data?.questions[page]?.text}
+                options={data?.questions[page]?.options}
               />
 
               <div className="text-center flex justify-evenly py-14">
-                <Button title="Back" onClickButton={onBackPage} />
-                <Button title="Next" onClickButton={onNextPage} />
+                <Button
+                  title="Back"
+                  onClickButton={onBackPage}
+                  disabled={page === 0}
+                />
+                <Button
+                  title={isLastQuestion ? "Finish" : "Next"}
+                  onClickButton={onNextPage}
+                />
               </div>
 
               <div className="mt-4 space-y-4 text-gray-600 text-center sm:-mb-8">
@@ -39,12 +53,10 @@ const QuestionContainer = () => {
           </div>
         </div>
       )}
-      {surveyQuery?.isFetching && <Loader />}
-      {surveyQuery?.isError &&
-        surveyQuery?.error &&
-        !surveyQuery?.isFetching && (
-          <Error text={surveyQuery?.error?.message ?? "Not found"} />
-        )}
+      {isFetching && <Loader />}
+      {isError && error && !isFetching && (
+        <Error text={error?.message ?? "Not found"} />
+      )}
     </>
   );
 };

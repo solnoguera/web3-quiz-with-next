@@ -1,14 +1,6 @@
 import React from "react";
 import Option from "../Option/Option";
-
-type Option = {
-  text: string;
-};
-
-type QuestionProps = {
-  text?: string;
-  options?: Option[];
-};
+import { QuestionProps } from "@/app/types/Survey.types";
 
 const Question = ({ text, options }: QuestionProps) => {
   //const [answer, setAnswer] = useState<string>();
