@@ -1,0 +1,19 @@
+{
+  "chainId": "0x5",
+  "chainName": "Goerli",
+  "nativeCurrency": {
+    "name": "Goerli Ether",
+    "symbol": "ETH",
+    "decimals": 18
+  },
+  "rpcUrls": [
+    "https://ethereum-goerli.publicnode.com",
+    "https://goerli.blockpi.network/v1/rpc/public",
+    "https://eth-goerli.public.blastapi.io",
+    "https://rpc.ankr.com/eth_goerli"
+  ],
+  "blockExplorerUrls": [
+    "https://goerli.etherscan.io",
+    "https://eth-goerli.blockscout.com"
+  ]
+}
