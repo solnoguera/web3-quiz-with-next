@@ -35,6 +35,11 @@ export type Survey = {
   questions: Question[];
 };
 
+export type LandingProps = {
+  title: string;
+  image: string;
+};
+
 export type QuestionContainerProps = {
   data?: Survey;
   isFetching: boolean;
