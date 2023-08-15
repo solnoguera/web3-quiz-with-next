@@ -6,6 +6,7 @@ import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import usePagination from "@/app/hooks/usePagination";
 import { QuestionContainerProps } from "@/app/types/Survey.types";
+import useCountdown from "@/app/hooks/useCountdown";
 
 const QuestionContainer = ({
   data,
@@ -17,16 +18,17 @@ const QuestionContainer = ({
     data?.questions?.length ?? 0
   );
   const isLastQuestion = page + 1 === data?.questions.length;
-  console.log(page);
   return (
     <>
       {!isFetching && !isError && (
         <div className="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
           <div className="rounded-xl bg-white shadow-xl">
-            <div className="p-6 sm:p-16">
+            <div className="p-6 sm:p-14">
               <Question
                 text={data?.questions[page]?.text}
                 options={data?.questions[page]?.options}
+                lifetimeSeconds={data?.questions[page]?.lifetimeSeconds}
+                page={page}
               />
 
               <div className="text-center flex justify-evenly py-14">

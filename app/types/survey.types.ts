@@ -20,6 +20,8 @@ export type Option = {
 export type QuestionProps = {
   text?: string;
   options?: Option[];
+  lifetimeSeconds?: number;
+  page: number;
 };
 
 export type Question = {
