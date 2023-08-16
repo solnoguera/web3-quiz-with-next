@@ -29,11 +29,6 @@ const QuestionContainer = () => {
 
               <div className="text-center flex justify-evenly py-14">
                 <Button
-                  title="Back"
-                  onClickButton={onBackPage}
-                  disabled={page === 0}
-                />
-                <Button
                   title={isLastQuestion ? "Finish" : "Next"}
                   onClickButton={onNextPage}
                 />
