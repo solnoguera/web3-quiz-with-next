@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const useCountdown = (page: number, seconds?: number) => {
+const useCountdown = (
+  page: number,
+  seconds?: number,
+  onTimeout?: () => void
+) => {
   const [countdown, setCountdown] = useState<number>(seconds ?? 0);
   const myInterval = useRef<any>();
 
@@ -16,6 +20,7 @@ const useCountdown = (page: number, seconds?: number) => {
   useEffect(() => {
     if (countdown === 0) {
       clearInterval(myInterval.current);
+      onTimeout && onTimeout();
     }
   }, [countdown]);
 

@@ -5,15 +5,10 @@ import Button from "../Button/Button";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import usePagination from "@/app/hooks/usePagination";
-import { QuestionContainerProps } from "@/app/types/Survey.types";
-import useCountdown from "@/app/hooks/useCountdown";
+import useSurvey from "@/app/hooks/useSurvey";
 
-const QuestionContainer = ({
-  data,
-  isFetching,
-  isError,
-  error,
-}: QuestionContainerProps) => {
+const QuestionContainer = () => {
+  const { data, isFetching, isError } = useSurvey();
   const { page, onNextPage, onBackPage } = usePagination(
     data?.questions?.length ?? 0
   );
@@ -29,6 +24,7 @@ const QuestionContainer = ({
                 options={data?.questions[page]?.options}
                 lifetimeSeconds={data?.questions[page]?.lifetimeSeconds}
                 page={page}
+                onTimeout={onNextPage}
               />
 
               <div className="text-center flex justify-evenly py-14">

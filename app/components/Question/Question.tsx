@@ -2,13 +2,21 @@ import React from "react";
 import Option from "../Option/Option";
 import { QuestionProps } from "@/app/types/Survey.types";
 import useCountdown from "@/app/hooks/useCountdown";
+import useAnswers from "@/app/hooks/useAnswers";
 
-const Question = ({ text, options, lifetimeSeconds, page }: QuestionProps) => {
+const Question = ({
+  text,
+  options,
+  lifetimeSeconds,
+  page,
+  onTimeout,
+}: QuestionProps) => {
   //const [answer, setAnswer] = useState<string>();
-  const { countdown } = useCountdown(page, lifetimeSeconds);
+  const { countdown } = useCountdown(page, lifetimeSeconds, onTimeout);
+  const { setAnswer } = useAnswers();
+
   const onClickOption = (answer: string) => {
-    console.log({ answer });
-    //setAnswer(answer);
+    setAnswer(page, answer);
   };
   return (
     <div>
@@ -17,7 +25,7 @@ const Question = ({ text, options, lifetimeSeconds, page }: QuestionProps) => {
           Time left:
           <span
             className={` font-bold ml-2  ${
-              countdown <= 5 ? "text-red-700" : ""
+              countdown <= 5 ? "text-red-600" : ""
             }`}
           >
             {countdown}

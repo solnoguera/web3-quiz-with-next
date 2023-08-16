@@ -22,6 +22,7 @@ export type QuestionProps = {
   options?: Option[];
   lifetimeSeconds?: number;
   page: number;
+  onTimeout: () => void;
 };
 
 export type Question = {
@@ -38,11 +39,4 @@ export type Survey = {
 export type LandingProps = {
   title: string;
   image: string;
-};
-
-export type QuestionContainerProps = {
-  data?: Survey;
-  isFetching: boolean;
-  isError: boolean;
-  error?: { message?: string };
 };
