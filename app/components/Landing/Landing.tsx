@@ -1,6 +1,5 @@
-import { LandingProps } from "@/app/types/Survey.types";
+import { LandingProps } from "@/app/types/survey.types";
 import React from "react";
-import Button from "../Button/Button";
 import Link from "next/link";
 import useConnectMetamask from "@/app/hooks/useConnectMetamask";
 import SwitchToGoerli from "../SwitchToGoerli/SwitchToGoerli";

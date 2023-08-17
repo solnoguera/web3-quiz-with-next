@@ -16,6 +16,7 @@ const useSurveyContract = () => {
       const web3 = new Web3(window.ethereum);
       // Create a contract instance using the contract address and ABI
       const contract = new web3.eth.Contract(quizAbi, addressQuiz);
+      web3.eth.defaultAccount = address;
       console.log({ contract });
       contractInstance.current = contract;
       console.log(contract.methods);
@@ -44,18 +45,14 @@ const useSurveyContract = () => {
   const submitSurvey = async (surveyId: number, answerIds: number[]) => {
     try {
       contractInstance.current.methods
-        ?.submit(surveyId, answerIds)
-        ?.send({ from: address })
-        ?.on("transactionHash", (hash: any) => {
-          alert(`hash ${hash}`);
+        .submit(surveyId, answerIds)
+        .send({ from: address })
+        .then((res: any) => {
+          console.log(res);
         })
-        ?.on("error", (error: any) => {
-          alert(`error ${error}`);
+        .catch((err: any) => {
+          console.log(err);
         });
-      // .then((submitSurvey) => {
-      //   console.log({ submitSurvey });
-      // })
-      // .catch((err) => console.log({ err }));
     } catch (error) {
       console.log("error", error);
     }

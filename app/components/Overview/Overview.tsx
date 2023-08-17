@@ -12,7 +12,7 @@ const Overview = () => {
   const { submitSurvey } = useSurveyContract();
 
   const handleSubmit = () => {
-    submitSurvey(827382367, [1, 2, 3, 4]);
+    submitSurvey(1, [5, 5, 5]);
     localStorage.clear();
   };
 
