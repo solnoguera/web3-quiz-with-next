@@ -9,11 +9,14 @@ const SwitchToGoerli = () => {
   return (
     <div>
       {chainId && chainId !== goerliChainId ? (
-        <div>
+        <div className="block">
+          <p className="ml-2 mb-4">
+            We need to you connect to Goerli Ethereum.
+          </p>
           <Button title="Switch to Goerli Net" onClickButton={switchToGoerli} />
         </div>
       ) : (
-        <p>Successfully connected to Goerli Network</p>
+        <p>Connected to Goerli Network</p>
       )}
     </div>
   );

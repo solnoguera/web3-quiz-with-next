@@ -15,21 +15,24 @@ const Landing = ({ title, image }: LandingProps) => {
       <div className="">
         <p className="text-7xl mb-10 text-black font-bold">{title}</p>
         <SwitchToGoerli />
-        <Balance />
         {address && chainId === goerliChainId && (
-          <div className="my-10 text-black">
-            <div className="text-lg mb-3">
-              <p>
-                You have your wallet connected and the network is looking good!
-              </p>
-              <p className="font-bold mt-3">
-                Are you ready to take the Survey?
-              </p>
+          <>
+            <Balance />
+            <div className="my-10 text-black">
+              <div className="text-xl mb-3">
+                <p>
+                  You have your wallet connected and the network is looking
+                  good!
+                </p>
+                <p className="font-bold mt-12 text-3xl">
+                  Are you ready to take the Survey?
+                </p>
+              </div>
+              <Link href="survey" className="underline text-xl">
+                Take Survey
+              </Link>
             </div>
-            <Link href="survey" className="underline text-md">
-              Take Survey
-            </Link>
-          </div>
+          </>
         )}
       </div>
       <div>
