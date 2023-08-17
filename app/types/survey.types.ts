@@ -6,7 +6,8 @@ export type ButtonProps = {
 
 export type OptionProps = {
   text: string;
-  onClickOption: (answer: string) => void;
+  onClickOption: (answer: string, key: number) => void;
+  idx: number;
 };
 
 export type Option = {

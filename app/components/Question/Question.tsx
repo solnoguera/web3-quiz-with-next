@@ -11,12 +11,11 @@ const Question = ({
   page,
   onTimeout,
 }: QuestionProps) => {
-  //const [answer, setAnswer] = useState<string>();
   const { countdown } = useCountdown(page, lifetimeSeconds, onTimeout);
   const { setAnswer } = useAnswers();
 
-  const onClickOption = (answer: string) => {
-    setAnswer(page, answer);
+  const onClickOption = (answer: string, key: number) => {
+    setAnswer(page, answer, key);
   };
   return (
     <div>
@@ -36,8 +35,13 @@ const Question = ({
         <h2 className="mb-8 text-2xl text-cyan-900 font-bold">{text}</h2>
       </div>
       <div className="mt-16 grid space-y-4">
-        {options?.map((option) => (
-          <Option text={option.text} onClickOption={onClickOption} />
+        {options?.map((option, index) => (
+          <Option
+            text={option.text}
+            onClickOption={onClickOption}
+            idx={index}
+            key={index}
+          />
         ))}
       </div>
     </div>

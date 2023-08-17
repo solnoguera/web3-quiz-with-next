@@ -6,7 +6,10 @@ import SwitchToGoerli from "../SwitchToGoerli/SwitchToGoerli";
 import { goerliChainId } from "../../utils/constants";
 import Balance from "../Balance/Balance";
 
-const Landing = ({ title, image }: LandingProps) => {
+const Landing = ({
+  title,
+  image = "https://www.quizdom.com/img/hero.png",
+}: LandingProps) => {
   const { address, chainId } = useConnectMetamask();
 
   return (
@@ -35,7 +38,7 @@ const Landing = ({ title, image }: LandingProps) => {
         )}
       </div>
       <div>
-        <img src="https://www.quizdom.com/img/hero.png" alt="" />
+        <img src={image} alt="" />
       </div>
     </div>
   );

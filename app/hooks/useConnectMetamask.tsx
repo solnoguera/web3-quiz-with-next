@@ -47,7 +47,6 @@ const useConnectMetamask = () => {
       const chainId = await window.ethereum.request({
         method: "eth_chainId",
       });
-      console.log({ chainId });
       setChainId(chainId);
       return chainId;
     } catch (error) {
