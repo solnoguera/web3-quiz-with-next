@@ -4,10 +4,6 @@ export type ButtonProps = {
   onClickButton: () => void;
 };
 
-export type ErrorProps = {
-  text: any;
-};
-
 export type OptionProps = {
   text: string;
   onClickOption: (answer: string) => void;

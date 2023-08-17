@@ -1,8 +1,8 @@
 import React from "react";
 import Option from "../Option/Option";
-import { QuestionProps } from "@/app/types/survey.types";
-import useCountdown from "@/app/hooks/useCountdown";
-import useAnswers from "@/app/hooks/useAnswers";
+import { QuestionProps } from "../../types/survey.types";
+import useCountdown from "../../hooks/useCountdown";
+import useAnswers from "../../hooks/useAnswers";
 
 const Question = ({
   text,

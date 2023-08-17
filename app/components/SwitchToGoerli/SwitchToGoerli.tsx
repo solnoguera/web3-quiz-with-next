@@ -1,7 +1,7 @@
-import useConnectMetamask from "@/app/hooks/useConnectMetamask";
+import useConnectMetamask from "../../hooks/useConnectMetamask";
 import React from "react";
 import Button from "../Button/Button";
-import { goerliChainId } from "@/app/utils/constants";
+import { goerliChainId } from "../../utils/constants";
 
 const SwitchToGoerli = () => {
   const { switchToGoerli, chainId } = useConnectMetamask();

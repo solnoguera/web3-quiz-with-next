@@ -1,4 +1,4 @@
-import { ButtonProps } from "@/app/types/Survey.types";
+import { ButtonProps } from "../../types/survey.types";
 import React from "react";
 
 const Button = ({ title, onClickButton, disabled = false }: ButtonProps) => {

@@ -1,4 +1,4 @@
-import useSurveyContract from "@/app/hooks/useSurveyContract";
+import useSurveyContract from "../../hooks/useSurveyContract";
 import React from "react";
 
 const Balance = () => {

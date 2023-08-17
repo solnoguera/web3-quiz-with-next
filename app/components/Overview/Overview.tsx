@@ -2,10 +2,10 @@
 import React from "react";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
-import useSurvey from "@/app/hooks/useSurvey";
+import useSurvey from "../../hooks/useSurvey";
 import Button from "../Button/Button";
-import useSurveyContract from "@/app/hooks/useSurveyContract";
-import { Question } from "@/app/types/survey.types";
+import useSurveyContract from "../../hooks/useSurveyContract";
+import { Question } from "../../types/survey.types";
 
 const Overview = () => {
   const { data, isFetching, isError } = useSurvey();

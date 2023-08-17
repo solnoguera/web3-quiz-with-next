@@ -1,9 +1,9 @@
-import { LandingProps } from "@/app/types/survey.types";
+import { LandingProps } from "../../types/survey.types";
 import React from "react";
 import Link from "next/link";
-import useConnectMetamask from "@/app/hooks/useConnectMetamask";
+import useConnectMetamask from "../../hooks/useConnectMetamask";
 import SwitchToGoerli from "../SwitchToGoerli/SwitchToGoerli";
-import { goerliChainId } from "@/app/utils/constants";
+import { goerliChainId } from "../../utils/constants";
 import Balance from "../Balance/Balance";
 
 const Landing = ({ title, image }: LandingProps) => {

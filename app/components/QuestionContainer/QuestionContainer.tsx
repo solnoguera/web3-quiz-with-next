@@ -4,9 +4,8 @@ import Question from "../Question/Question";
 import Button from "../Button/Button";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
-import usePagination from "@/app/hooks/usePagination";
-import useSurvey from "@/app/hooks/useSurvey";
-import useAnswers from "@/app/hooks/useAnswers";
+import usePagination from "../../hooks/usePagination";
+import useSurvey from "../../hooks/useSurvey";
 
 const QuestionContainer = () => {
   const { data, isFetching, isError } = useSurvey();
