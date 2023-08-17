@@ -5,11 +5,12 @@ const useAnswers = () => {
   const setAnswer = (index: number, answer: string) => {
     const newArray = answers.set(index, answer);
     setAnswers(newArray);
+    localStorage.setItem(index.toString(), answer);
   };
-  console.log(answers);
   const getAnswer = (index: number) => {
     return answers.get(index);
   };
+  console.log(answers);
   return { setAnswer, getAnswer, answers };
 };
 

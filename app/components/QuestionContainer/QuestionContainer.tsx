@@ -6,13 +6,13 @@ import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import usePagination from "@/app/hooks/usePagination";
 import useSurvey from "@/app/hooks/useSurvey";
+import useAnswers from "@/app/hooks/useAnswers";
 
 const QuestionContainer = () => {
   const { data, isFetching, isError } = useSurvey();
-  const { page, onNextPage, onBackPage } = usePagination(
-    data?.questions?.length ?? 0
-  );
+  const { page, onNextPage } = usePagination(data?.questions?.length ?? 0);
   const isLastQuestion = page + 1 === data?.questions.length;
+  const goToOverview = () => (window.location.href = "/overview");
   return (
     <>
       {!isFetching && !isError && (
@@ -24,13 +24,13 @@ const QuestionContainer = () => {
                 options={data?.questions[page]?.options}
                 lifetimeSeconds={data?.questions[page]?.lifetimeSeconds}
                 page={page}
-                onTimeout={onNextPage}
+                onTimeout={isLastQuestion ? goToOverview : onNextPage}
               />
 
               <div className="text-center flex justify-evenly py-14">
                 <Button
                   title={isLastQuestion ? "Finish" : "Next"}
-                  onClickButton={onNextPage}
+                  onClickButton={isLastQuestion ? goToOverview : onNextPage}
                 />
               </div>
 
