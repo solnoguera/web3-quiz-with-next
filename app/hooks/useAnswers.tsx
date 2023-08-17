@@ -6,11 +6,11 @@ const useAnswers = () => {
     const newArray = answers.set(index, answer);
     setAnswers(newArray);
   };
-
+  console.log(answers);
   const getAnswer = (index: number) => {
     return answers.get(index);
   };
-  return { setAnswer, getAnswer };
+  return { setAnswer, getAnswer, answers };
 };
 
 export default useAnswers;

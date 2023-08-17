@@ -5,21 +5,36 @@ import Link from "next/link";
 import useConnectMetamask from "@/app/hooks/useConnectMetamask";
 import SwitchToGoerli from "../SwitchToGoerli/SwitchToGoerli";
 import { goerliChainId } from "@/app/utils/constants";
+import Balance from "../Balance/Balance";
 
 const Landing = ({ title, image }: LandingProps) => {
   const { address, chainId } = useConnectMetamask();
 
   return (
-    <div>
-      <p className="text-7xl mb-10 text-black font-bold">{title}</p>
-      <SwitchToGoerli />
-      {address && chainId === goerliChainId && (
-        <div className="my-10">
-          <Link href="survey" className="underline text-xl">
-            Take Survey
-          </Link>
-        </div>
-      )}
+    <div className="container md:flex sm:block">
+      <div className="">
+        <p className="text-7xl mb-10 text-black font-bold">{title}</p>
+        <SwitchToGoerli />
+        <Balance />
+        {address && chainId === goerliChainId && (
+          <div className="my-10 text-black">
+            <div className="text-lg mb-3">
+              <p>
+                You have your wallet connected and the network is looking good!
+              </p>
+              <p className="font-bold mt-3">
+                Are you ready to take the Survey?
+              </p>
+            </div>
+            <Link href="survey" className="underline text-md">
+              Take Survey
+            </Link>
+          </div>
+        )}
+      </div>
+      <div>
+        <img src="https://www.quizdom.com/img/hero.png" alt="" />
+      </div>
     </div>
   );
 };

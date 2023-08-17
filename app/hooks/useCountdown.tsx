@@ -15,6 +15,7 @@ const useCountdown = (
       setCountdown((count) => count - 1);
     }, 1000);
     return () => clearInterval(myInterval.current);
+    // when the page changes we have to start the counter again
   }, [page, seconds]);
 
   useEffect(() => {
