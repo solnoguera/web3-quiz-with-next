@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiz App
 
-## Getting Started
+## This is a React and TypeScript web application that allows users to take quizzes and earn tokens. The app is built on Next.js and uses React Query for state management. Tailwind CSS is used for styling.
 
-First, run the development server:
+Requirements:
 
-```bash
+The app must be connected to a Metamask wallet.
+The app must ensure that the user is connected to the Goerli network.
+The app must show the balance of the $QUIZ token.
+When the page is loaded, the app must present the title of the daily trivia with its picture and a button that allows the user to begin answering the questions.
+Once the survey starts, the app must display the current question, which will be available for the amount of seconds specified in the lifetimeSeconds property.
+Whether or not the user answers the question, the app must move onto the next question.
+Once all the questions are finished, the app must show an overview of all the answers.
+The app must have a button that allows the user to submit the answers to the validator contract.
+The app must refresh the balance of the $QUIZ token.
+Getting Started
+To get started with the app, you will need to:
+
+Install Node.js and npm.
+Clone the repository from GitHub.
+Install the dependencies by running the following command:
+npm install
+
+4. Run the app by running the following command:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Resources
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Next.js](https://nextjs.org/)
+- [React Query](https://react-query.tanstack.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Metamask](https://metamask.io/)
+- [Goerli Network](https://goerli.ethereum.org/)
+- [$QUIZ Token](https://quiz.xyz/)
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License.
