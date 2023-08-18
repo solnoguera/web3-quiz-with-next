@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Loader from "../Loader/Loader";
 import Error from "../Error/Error";
 import useSurvey from "../../hooks/useSurvey";
@@ -8,6 +8,7 @@ import useSurveyContract from "../../hooks/useSurveyContract";
 import { Question } from "../../types/survey.types";
 
 const Overview = () => {
+  const [showError, setShowError] = useState<boolean>(false);
   const { data, isFetching, isError } = useSurvey();
   const { submitSurvey } = useSurveyContract();
 
@@ -25,6 +26,7 @@ const Overview = () => {
     console.log("answersIds", answersIds);
     submitSurvey(randomId, answersIds);
     localStorage.clear();
+    setTimeout(() => setShowError(true), 4000);
   };
 
   const handleDoItAgain = () => {
@@ -34,7 +36,7 @@ const Overview = () => {
   return (
     <>
       {!isFetching && !isError && (
-        <div className="flex justify-center mx-auto">
+        <div className="flex justify-center mx-auto max-w-3xl">
           <div className="block">
             <h1 className="text-6xl font-black text-black mb-10">Overview</h1>
             <div className="block">
@@ -51,12 +53,17 @@ const Overview = () => {
               ))}
             </div>
             <div className="flex justify-evenly mt-12">
-              <Button
-                title="I want to do it again"
-                onClickButton={handleDoItAgain}
-              />
+              <Button title="Start Over" onClickButton={handleDoItAgain} />
               <Button title="Submit" onClickButton={handleSubmit} />
             </div>
+            {showError && (
+              <p className="text-red-700 mt-4">
+                The EVM throws an unexpected error called
+                TransactionRevertedWithoutReasonError. If your transaction
+                ended, check out the console. You can find out more about this
+                in the README file at the github repo. I am really so sorry!
+              </p>
+            )}
           </div>
         </div>
       )}

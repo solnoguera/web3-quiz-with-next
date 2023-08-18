@@ -51,7 +51,11 @@ Also I used **Sand API** to create an endpoint that returns the survey data (JSO
 - [Netlify](https://www.netlify.com/)
 - [Sand API](https://sandapi.com/)
 
----
+I am very proud of the web page. Unfortunately, when calling the .submit() method from the contract, it returns **TransactionRevertedWithoutReasonError: Transaction has been reverted by the EVM**. I did not have more information about the problem so it was very hard for me to solve it alone. I put so much effor on this challenge, I hope this code is enough despite the last error :disappointed:
+
+Please, let me know the way to fix it.
+
+The submit call can be found in useSurveyContract.tsx
 
 # [Go to Deploy](https://web3-quiz.netlify.app/)
 
@@ -60,5 +64,3 @@ Also I used **Sand API** to create an endpoint that returns the survey data (JSO
 ## Made by Sol Noguera.
 
 ### Last updated: August 17, 2023
-
----
