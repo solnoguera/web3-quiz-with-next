@@ -18,7 +18,7 @@ const useSurveyContract = () => {
       const contract = new web3.eth.Contract(quizAbi, addressQuiz);
       web3.eth.defaultAccount = address;
       contractInstance.current = contract;
-      getBalanceFromSmartContract(contract);
+      getBalanceFromSmartContract();
     }
   }, [address]);
 
