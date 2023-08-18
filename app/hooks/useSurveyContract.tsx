@@ -22,7 +22,7 @@ const useSurveyContract = () => {
     }
   }, [address]);
 
-  const getBalanceFromSmartContract = async (contract: any) => {
+  const getBalanceFromSmartContract = async () => {
     contractInstance.current.methods
       ?.balanceOf(address)
       .call()
@@ -36,16 +36,19 @@ const useSurveyContract = () => {
       });
   };
   const submitSurvey = async (surveyId: number, answerIds: number[]) => {
-    contractInstance.current.methods
-      .submit(surveyId, answerIds)
-      .send({ from: address })
-      .then((res: any) => {
-        console.log(res);
-      })
-      .catch((err: any) => {
-        console.log(err);
-        return;
-      });
+    try {
+      contractInstance.current.methods
+        .submit(surveyId, answerIds)
+        .send({ from: address })
+        .then((res: any) => {
+          console.log(res);
+        })
+        .catch((err: any) => {
+          console.log(err);
+        });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return { balance, submitSurvey };
