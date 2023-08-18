@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className}>
         <main className="flex min-h-screen bg-gradient-to-br from-sky-50 to-gray-200 h-full">
           <div className="container m-auto text-gray-500 px-6 xl:px-30">

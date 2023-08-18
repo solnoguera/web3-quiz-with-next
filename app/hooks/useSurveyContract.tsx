@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { addressQuiz } from "../utils/constants";
-import quizAbi from "../assets/quizAbi.json";
+import quizAbi from "../contracts/quizAbi.json";
 import Web3 from "web3";
 import useConnectMetamask from "./useConnectMetamask";
 
