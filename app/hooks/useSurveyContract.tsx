@@ -28,7 +28,6 @@ const useSurveyContract = () => {
       .call()
       .then((res: any) => {
         const balance = Number(res);
-        console.log({ balance });
         setBalance(balance);
       })
       .catch((err: any) => console.log({ err }));
