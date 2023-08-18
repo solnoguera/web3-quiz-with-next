@@ -30,7 +30,10 @@ const useSurveyContract = () => {
         const balance = Number(res);
         setBalance(balance);
       })
-      .catch((err: any) => console.log({ err }));
+      .catch((err: any) => {
+        console.log(err);
+        return;
+      });
   };
   const submitSurvey = async (surveyId: number, answerIds: number[]) => {
     contractInstance.current.methods
@@ -41,6 +44,7 @@ const useSurveyContract = () => {
       })
       .catch((err: any) => {
         console.log(err);
+        return;
       });
   };
 
