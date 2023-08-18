@@ -36,19 +36,16 @@ const useSurveyContract = () => {
       });
   };
   const submitSurvey = async (surveyId: number, answerIds: number[]) => {
-    try {
-      contractInstance.current.methods
-        .submit(surveyId, answerIds)
-        .send({ from: address })
-        .then((res: any) => {
-          console.log(res);
-        })
-        .catch((err: any) => {
-          console.log(err);
-        });
-    } catch (error) {
-      console.log(error);
-    }
+    contractInstance.current.methods
+      .submit(surveyId, answerIds)
+      .send({ from: address })
+      .then((res: any) => {
+        console.log(res);
+      })
+      .catch((err: any) => {
+        console.log(err);
+        return;
+      });
   };
 
   return { balance, submitSurvey };
