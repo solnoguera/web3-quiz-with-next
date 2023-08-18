@@ -8,7 +8,6 @@ import useSurveyContract from "../../hooks/useSurveyContract";
 import { Question } from "../../types/survey.types";
 
 const Overview = () => {
-  const [showError, setShowError] = useState<boolean>(false);
   const { data, isFetching, isError } = useSurvey();
   const { submitSurvey } = useSurveyContract();
 
@@ -26,7 +25,6 @@ const Overview = () => {
     console.log("answersIds", answersIds);
     submitSurvey(randomId, answersIds);
     localStorage.clear();
-    setTimeout(() => setShowError(true), 4000);
   };
 
   const handleDoItAgain = () => {
@@ -36,7 +34,7 @@ const Overview = () => {
   return (
     <>
       {!isFetching && !isError && (
-        <div className="flex justify-center mx-auto max-w-3xl">
+        <div className="flex justify-center mx-auto max-w-2xl">
           <div className="block">
             <h1 className="text-6xl font-black text-black mb-10">Overview</h1>
             <div className="block">
@@ -56,14 +54,15 @@ const Overview = () => {
               <Button title="Start Over" onClickButton={handleDoItAgain} />
               <Button title="Submit" onClickButton={handleSubmit} />
             </div>
-            {showError && (
-              <p className="text-red-700 mt-4">
-                The EVM throws an unexpected error called
-                TransactionRevertedWithoutReasonError. If your transaction
-                ended, check out the console. You can find out more about this
-                in the README file at the github repo. I am really so sorry!
+            <div>
+              <p className="text-red-700 mt-6 ">
+                After the Submit transaction ends, the EVM throws an unexpected
+                error called TransactionRevertedWithoutReasonError. If your
+                transaction ended, you can check it out on the console. You can
+                read more about this in the README file at the github repo. I am
+                really so sorry!
               </p>
-            )}
+            </div>
           </div>
         </div>
       )}
